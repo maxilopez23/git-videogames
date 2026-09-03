@@ -20,7 +20,22 @@ export class GamesList {
   // Si genre es 'All', retornar todos los juegos.
   // Usá el método .filter(x => condición) del array this.games para filtrar por genre.
   filterByGenre(_genre: string): Game[] {
-    return this.games
+    switch (_genre) {
+      case 'Adventure':
+        return this.games.filter(x => x.genre === 'Adventure');
+      case 'Fighting':
+        return this.games.filter(x => x.genre === 'Fighting');
+      case 'Platformer':
+        return this.games.filter(x => x.genre === 'Platformer');
+      case 'FPS':
+        return this.games.filter(x => x.genre === 'FPS');
+      case 'Puzzle':
+        return this.games.filter(x => x.genre === 'Puzzle');
+      case 'Sandbox':
+         return this.games.filter(x => x.genre === 'Sandbox');
+      default:
+        return this.games;
+    }
   }
 
   count(): number {
